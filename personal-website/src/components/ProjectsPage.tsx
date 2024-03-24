@@ -4,9 +4,11 @@ import {
   useMantineColorScheme,
   useComputedColorScheme,
   Title,
+  Image,
 } from "@mantine/core";
 import { Project } from "./Projects";
 import styles from "./ProjectsPage.module.css";
+import image from "./snoopyWelcome.png";
 
 const projectData1 = {
   image:
@@ -144,9 +146,11 @@ export function ProjectsPage() {
   const backgroundColor =
     computedColorScheme === "dark"
       ? colorScheme === "dark"
-        ? "#242424"
+        ? "#a9d9d9"
         : "white"
       : "white";
+  const textColor = computedColorScheme === "dark" ? "#FFFFFF" : "#000000";
+
 
   // Define the background image URL
   const backgroundImageUrl =
@@ -179,18 +183,34 @@ export function ProjectsPage() {
             lineHeight: 1.3,
             margin: 0,
             padding: 0,
+            color: textColor,
           }}
           fw={900}
           ta="center"
         >
           Projects
         </Title>
-
+        <div
+          style={{
+            position: "absolute",
+            bottom: 20,
+            right: 20,
+          }}
+        ></div>
         <div className={styles.grid}>
           <Project {...projectData1} />
           <Project {...projectData2} />
         </div>
       </Container>
+      {/* <div
+        style={{
+          position: "absolute",
+          bottom: 20,
+          right: 100,
+        }}
+      >
+        <Image src={image} width={200} height={200} />
+      </div> */}
     </div>
   );
 }

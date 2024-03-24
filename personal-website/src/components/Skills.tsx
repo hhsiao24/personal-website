@@ -5,7 +5,7 @@ import {
   useMantineColorScheme,
   useComputedColorScheme,
   Title,
-  Image, // Import the Image component
+  Image,
 } from "@mantine/core";
 import { mySkills } from "./MySkills";
 import SkillCard from "./SkillCard";
@@ -22,8 +22,11 @@ const Skills = () => {
     computedColorScheme === "dark"
       ? colorScheme === "dark"
         ? "#242424"
-        : "white"
-      : "white";
+        : "#ec627a"
+      : "#ec627a";
+
+  // Define the text color
+  const textColor = computedColorScheme === "dark" ? "#FFFFFF" : "#000000";
 
   return (
     <div id="skills">
@@ -54,6 +57,7 @@ const Skills = () => {
               lineHeight: 1.3,
               margin: 0,
               padding: 0,
+              color: textColor, // Apply text color here
             }}
             fw={900}
             ta="center"
@@ -67,8 +71,7 @@ const Skills = () => {
             ))}
           </Group>
         </Container>
-        {/* Use the Image component */}
-        <div
+        {/* <div
           style={{
             position: "absolute",
             bottom: 20,
@@ -76,7 +79,7 @@ const Skills = () => {
           }}
         >
           <Image src={image} width={350} height={350} />
-        </div>
+        </div> */}
       </div>
     </div>
   );

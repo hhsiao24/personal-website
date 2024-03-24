@@ -7,7 +7,8 @@
 
 .content {
   max-width: rem(600px); /* Increase the max-width value */
-  /* margin-right: calc(var(--mantine-spacing-xl) * 1); */
+  margin-right: 200px;
+  margin-left: 200px;
 
   @media (max-width: $mantine-breakpoint-md) {
     max-width: 100%;
@@ -34,8 +35,11 @@
 }
 
 .image {
-  width: rem(100px);
-  height: rem(100px);
+  width: rem(200px);
+  height: rem(200px);
+  margin-left: -100px;
+  margin-right: 50px;
+  margin-bottom: 50px;
 
   @media (max-width: $mantine-breakpoint-md) {
     display: none;
@@ -59,6 +63,18 @@
 
 .buttonContainer.animate {
   animation: slideInFromLeft 1s ease-in-out;
+}
+.image.animate {
+  animation: bounceAnimation 1s ease-in-out infinite alternate;
+}
+
+@keyframes bounceAnimation {
+  0% {
+    transform: translateY(10);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes slideInFromLeft {

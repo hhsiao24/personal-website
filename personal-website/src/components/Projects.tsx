@@ -44,57 +44,59 @@ export function Project({
 
   return (
     <div id="home">
-    <Container
-      size={900}
-      style={{
-        position: "relative",
-        paddingTop: 30,
-        paddingBottom: 100,
-        textAlign: "center",
-      }}
-    >
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <Card withBorder radius="md" p="md" className={classes.card}>
-          <Card.Section>
-            <Image src={image} alt={title} height={180} />
-          </Card.Section>
+      <Container
+        size={900}
+        style={{
+          position: "relative",
+          paddingTop: 30,
+          paddingBottom: 100,
+          textAlign: "center",
+        }}
+      >
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <Card withBorder radius="md" p="md" className={classes.card}>
+            <Card.Section>
+              <Image src={image} alt={title} height={180} />
+            </Card.Section>
 
-          <Card.Section className={classes.section} mt="md">
-            <Group justify="apart">
-              <Text fz="lg" fw={500}>
-                {title}
+            <Card.Section className={classes.section} mt="md">
+              <Group justify="apart">
+                <Text fz="lg" fw={500}>
+                  {title}
+                </Text>
+              </Group>
+              <Text fz="sm" mt="xs">
+                {description}
               </Text>
-            </Group>
-            <Text fz="sm" mt="xs">
-              {description}
-            </Text>
-          </Card.Section>
+            </Card.Section>
 
-          <Card.Section className={classes.section}>
-            <Group gap={7} mt={5}>
-              {features}
-            </Group>
-          </Card.Section>
+            <Card.Section className={classes.section}>
+              <Group gap={7} mt={5}>
+                {features}
+              </Group>
+            </Card.Section>
 
-          <Group mt="xs">
-            <Button
-              radius="md"
-              style={{ flex: 1 }}
-              onClick={handleGitHubButtonClick}
-            >
-              GitHub
-            </Button>
-            <Button
-              radius="md"
-              style={{ flex: 1 }}
-              onClick={handleWebsiteClick}
-            >
-              Visit
-            </Button>
-          </Group>
-        </Card>
-      </div>
-    </Container>
+            <Group mt="xs">
+              <Button
+                color="#ec627a"
+                radius="md"
+                style={{ flex: 1 }}
+                onClick={handleGitHubButtonClick}
+              >
+                GitHub
+              </Button>
+              <Button
+                color="#ec627a"
+                radius="md"
+                style={{ flex: 1 }}
+                onClick={handleWebsiteClick}
+              >
+                Visit
+              </Button>
+            </Group>
+          </Card>
+        </div>
+      </Container>
     </div>
   );
 }

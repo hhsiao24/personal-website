@@ -6,8 +6,6 @@
     light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
 }
 
-
-
 .fixed {
   position: fixed;
   top: 0;
@@ -15,7 +13,6 @@
   width: 100%;
   z-index: 1000; /* Adjust the z-index as needed */
 }
-
 
 .inner {
   height: rem(56px);
@@ -41,10 +38,15 @@
     );
   }
 
-  [data-mantine-color-scheme] &[data-active] {
-    background-color: #bdb2d1;
+  /* [data-mantine-color-scheme] &[data-active] {
+    background-color: #ec627a;
     color: var(--mantine-color-white);
-  }
+  } */
+}
+
+.link:active {
+  /* Conditional background color based on color scheme */
+  background-color: light-dark(#a9d9d9, #ec627a);
 }
 
 .text {
