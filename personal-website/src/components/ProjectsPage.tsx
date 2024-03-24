@@ -3,6 +3,7 @@ import {
   Text,
   useMantineColorScheme,
   useComputedColorScheme,
+  Title,
 } from "@mantine/core";
 import { Project } from "./Projects";
 import styles from "./ProjectsPage.module.css";
@@ -143,9 +144,9 @@ export function ProjectsPage() {
   const backgroundColor =
     computedColorScheme === "dark"
       ? colorScheme === "dark"
-        ? "#d6c1d9"
-        : "#F2E7F3"
-      : "#F2E7F3";
+        ? "#242424"
+        : "white"
+      : "white";
 
   // Define the background image URL
   const backgroundImageUrl =
@@ -155,7 +156,7 @@ export function ProjectsPage() {
       id="projects"
       style={{
         position: "relative",
-        background: `${backgroundColor} ${backgroundImageUrl} no-repeat center center`,
+        background: `${backgroundColor} no-repeat center center`, //${backgroundImageUrl}
         backgroundSize: "cover",
       }}
     >
@@ -168,24 +169,23 @@ export function ProjectsPage() {
           textAlign: "center",
         }}
       >
-        <Text
-          component="h1"
-          variant="gradient"
+        <Title
+          order={2}
+          size="h1"
           style={{
-            fontFamily: "Greycliff CF, sans-serif",
+            fontFamily: "Greycliff CF, var(--mantine-font-family)",
             fontSize: 56,
             fontWeight: 1000,
             lineHeight: 1.3,
             margin: 0,
             padding: 0,
-            color: "#fff",
-            background: `linear-gradient(75deg, #44004ecc, #44004ecc)`,
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
           }}
+          fw={900}
+          ta="center"
         >
           Projects
-        </Text>
+        </Title>
+
         <div className={styles.grid}>
           <Project {...projectData1} />
           <Project {...projectData2} />

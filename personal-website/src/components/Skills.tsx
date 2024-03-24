@@ -4,10 +4,12 @@ import {
   Group,
   useMantineColorScheme,
   useComputedColorScheme,
-  Overlay,
+  Title,
+  Image, // Import the Image component
 } from "@mantine/core";
 import { mySkills } from "./MySkills";
 import SkillCard from "./SkillCard";
+import image from "./snoopyWelcome.png";
 
 const BREAKPOINT = "@media (max-width: 755px)";
 
@@ -19,77 +21,63 @@ const Skills = () => {
   const backgroundColor =
     computedColorScheme === "dark"
       ? colorScheme === "dark"
-        ? "#d6c1d9"
-        : "#F2E7F3"
-      : "#F2E7F3";
-
-  // Define the background image URL
-  const backgroundImageUrl =
-    "url('https://64.media.tumblr.com/a5ee6d62ef261da76b951c2b25f0ca7e/tumblr_n5scf7CTdD1sfvpsto1_500.gif')";
+        ? "#242424"
+        : "white"
+      : "white";
 
   return (
     <div id="skills">
-    <div
-      id="skills"
-      style={{
-        position: "relative",
-        background: `${backgroundColor} ${backgroundImageUrl} no-repeat center center`,
-        backgroundSize: "cover",
-      }}
-    >
-      {/* <Overlay
-        gradient="linear-gradient(180deg, rgba(207, 193, 209, 0.8) 0%, rgba(0, 0, 0, 0.65) 100%)"
-        opacity={1}
-        zIndex={1} // Ensure the overlay is above other elements
-      /> */}
-      <Container
-        size={900}
+      <div
+        id="skills"
         style={{
           position: "relative",
-          paddingTop: 100,
-          paddingBottom: 100,
-          textAlign: "center",
+          background: `${backgroundColor} no-repeat center center`,
+          backgroundSize: "cover",
         }}
       >
-        <Text
-          component="h1"
-          variant="gradient"
+        <Container
+          size={900}
           style={{
-            fontFamily: "Greycliff CF, sans-serif",
-            fontSize: 56,
-            fontWeight: 1000,
-            lineHeight: 1.3,
-            margin: 0,
-            padding: 0,
-            color:
-              computedColorScheme === "dark"
-                ? colorScheme === "dark"
-                  ? "#fff"
-                  : "#000"
-                : colorScheme === "dark"
-                ? "#fff"
-                : "#000",
-            [BREAKPOINT]: {
-              fontSize: 36,
-              lineHeight: 1.2,
-            },
-          }}
-          gradient={{
-            from: "#44004ecc",
-            to: "#44004ecc",
-            deg: 75,
+            position: "relative",
+            paddingTop: 100,
+            paddingBottom: 100,
+            textAlign: "center",
           }}
         >
-          Skills
-        </Text>
+          <Title
+            order={2}
+            size="h1"
+            style={{
+              fontFamily: "Greycliff CF, var(--mantine-font-family)",
+              fontSize: 56,
+              fontWeight: 1000,
+              lineHeight: 1.3,
+              margin: 0,
+              padding: 0,
+            }}
+            fw={900}
+            ta="center"
+          >
+            Skills
+          </Title>
 
-        <Group mt={24}>
-          {mySkills.map((skill, i) => (
-            <SkillCard key={i} {...skill} />
-          ))}
-        </Group>
-      </Container>
-    </div>
+          <Group mt={24}>
+            {mySkills.map((skill, i) => (
+              <SkillCard key={i} {...skill} />
+            ))}
+          </Group>
+        </Container>
+        {/* Use the Image component */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 20,
+            right: 20,
+          }}
+        >
+          <Image src={image} width={350} height={350} />
+        </div>
+      </div>
     </div>
   );
 };

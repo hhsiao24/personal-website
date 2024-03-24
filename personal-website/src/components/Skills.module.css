@@ -23,7 +23,7 @@
 }
 
 .title {
-  color: var(--mantine-color-white);
+  color: var(--text-color);
   font-size: rem(100px); /* Adjust size as needed */
   font-weight: bold; /* Make the text thicker */
   text-align: center; /* Center the text */

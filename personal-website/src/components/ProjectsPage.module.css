@@ -6,3 +6,8 @@
   ); /* Adjust the number of columns as needed */
   gap: 20px; /* Adjust the gap between projects as needed */
 }
+
+.title {
+  border-bottom: rem(1px) solid
+    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+}

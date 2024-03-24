@@ -49,7 +49,13 @@ export function Contact() {
           <Title
             order={2}
             size="h1"
-            style={{ fontFamily: "Greycliff CF, var(--mantine-font-family)" }}
+            style={{ fontFamily: "Greycliff CF, var(--mantine-font-family)", 
+            fontSize: 56,
+            fontWeight: 1000,
+            lineHeight: 1.3,
+            margin: 0,
+            padding: 0,
+      }}
             fw={900}
             ta="center"
           >

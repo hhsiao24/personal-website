@@ -44,6 +44,9 @@ const Header = ({ toggle, opened }: any) => {
           window.scrollTo({ top: 0, behavior: "smooth" });
         }
       }}
+      style={{
+        color: computedColorScheme === "dark" ? "#FFFFFF" : "#000000",
+      }}
     >
       {link.label}
     </a>
