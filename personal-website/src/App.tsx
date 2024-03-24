@@ -7,7 +7,7 @@ import ProjectsPage from "./components/ProjectsPage";
 import { Contact } from "./components/Contact";
 import Footer from "./components/Footer";
 import { MantineProvider } from "@mantine/core";
-import HeroBullets from "./components/HomePage";
+import HomePage from "./components/HomePage";
 
 function App() {
   const [opened, { toggle }] = useDisclosure();
@@ -16,7 +16,7 @@ function App() {
     <MantineProvider>
       <div className="App">
         <Header opened={opened} toggle={toggle} />
-        <HeroBullets />
+        <HomePage />
         <Skills />
         <ProjectsPage />
         <Contact />
