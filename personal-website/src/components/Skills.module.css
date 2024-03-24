@@ -1,0 +1,31 @@
+.hero {
+  position: relative;
+  /* background-image: url(https://i.pinimg.com/originals/50/9a/1e/509a1e20877aac52660e82cd91d93792.jpg); */
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  height: rem(700px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-top: rem(60px);
+  padding-bottom: calc(var(--mantine-spacing-xl) * 12);
+  z-index: 1;
+  position: relative;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    height: rem(500px);
+    padding-bottom: calc(var(--mantine-spacing-xl) * 3);
+  }
+}
+
+.title {
+  color: var(--mantine-color-white);
+  font-size: rem(100px); /* Adjust size as needed */
+  font-weight: bold; /* Make the text thicker */
+  text-align: center; /* Center the text */
+  margin-bottom: rem(24px); /* Add some bottom margin */
+}
